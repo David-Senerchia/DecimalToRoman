@@ -32,7 +32,7 @@ public class FlexibleIntegerToRoman {
 	 */
     public static String arabicToRoman(int num) {
         if (num <= 0) { // error handling
-            return "Integer must be greater than 0";
+            throw new IllegalArgumentException("Integer must be greater than 0");
         }
         return arabicToRoman(num, false);
     }
@@ -81,7 +81,7 @@ public class FlexibleIntegerToRoman {
 	 */
     public static String arabicToRoman(int num, String thousands, String fiveHundreds, String hundreds, String fifties, String tens, String fives, String ones) {
         if (num <= 0) { // error handling
-            return "Integer must be greater than 0";
+            throw new IllegalArgumentException("Integer must be greater than 0");
         }
         thousand = thousands;
         fiveHun = fiveHundreds;

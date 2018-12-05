@@ -15,7 +15,7 @@ public class InflexibleIntegerToRoman {
 	 */
     public static String arabicToRoman(int num) {
         if (num <= 0 || num > 4999) { // error handling
-            return "Integer must be between 1 and 4999";
+            throw new IllegalArgumentException("Integer must be between 1 and 4999");
         }
         String thousands[] = {"", "M", "MM", "MMM", "MMMM"}; // list of possible numerals for digits past 1000
         String hundreds[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"}; // list of possible digits for the 100ths decimal place
