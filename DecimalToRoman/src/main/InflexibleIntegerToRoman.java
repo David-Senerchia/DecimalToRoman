@@ -4,7 +4,7 @@ package main;
  * @author David Senerchia
  *
  */
-public class InflexibleDecimalToRoman {
+public class InflexibleIntegerToRoman {
 	/**
 	 * Converts decimal in standard Arabic numbers to a Roman numeral representation. 
 	 * Definition of relation between Roman and decimal taken from https://en.wikipedia.org/wiki/Roman_numerals

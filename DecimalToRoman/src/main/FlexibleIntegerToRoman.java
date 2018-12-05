@@ -7,7 +7,7 @@ package main;
  * @author David Senerchia
  *
  */
-public class FlexibleDecimalToRoman {
+public class FlexibleIntegerToRoman {
 	/** Numeral representation of 1000 */
     private static String thousand = "M";
 	/** Numeral representation of 500 */
