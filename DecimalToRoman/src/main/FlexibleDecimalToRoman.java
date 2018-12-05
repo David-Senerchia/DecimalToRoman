@@ -9,19 +9,19 @@ package main;
  */
 public class FlexibleDecimalToRoman {
 	/** Numeral representation of 1000 */
-	private static String thousand = "M";
+    private static String thousand = "M";
 	/** Numeral representation of 500 */
-	private static String fiveHun = "D";
+    private static String fiveHun = "D";
 	/**  Numeral representation of 100 */
-	private static String hundred = "C";
+    private static String hundred = "C";
 	/** Numeral representation of 50 */
-	private static String fifty = "L";
+    private static String fifty = "L";
 	/** Numeral representation of 10 */
-	private static String ten = "X";
+    private static String ten = "X";
 	/** Numeral representation of 5 */
-	private static String five = "V";
+    private static String five = "V";
 	/** Numeral representation of 1 */
-	private static String one = "I";
+    private static String one = "I";
 	
 	/**
 	 * Converts decimal in standard Arabic numbers to a Roman numeral representation. 
@@ -30,12 +30,12 @@ public class FlexibleDecimalToRoman {
 	 * @param num int greater than 0 to convert
 	 * @return String of Roman numerals
 	 */
-	public static String arabicToRoman(int num) {
-		if (num <= 0) { // error handling
-			return "Integer must be greater than 0";
-		}
-		return arabicToRoman(num, false);
-	}
+    public static String arabicToRoman(int num) {
+        if (num <= 0) { // error handling
+            return "Integer must be greater than 0";
+        }
+        return arabicToRoman(num, false);
+    }
 	
 	/**
 	 * Converts decimal in standard Arabic numbers to a Roman numeral representation. 
@@ -47,22 +47,22 @@ public class FlexibleDecimalToRoman {
 	 * @param signed boolean true if signed, false if unsigned
 	 * @return String of Roman numerals
 	 */
-	public static String arabicToRoman(int num, boolean signed) {
-		StringBuilder sb = new StringBuilder();
-		if (signed && num < 0) {
-			num = Math.abs(num);
-			sb.append('-');
-		}
+    public static String arabicToRoman(int num, boolean signed) {
+        StringBuilder sb = new StringBuilder();
+        if (signed && num < 0) {
+            num = Math.abs(num);
+            sb.append('-');
+        }
         String hundreds[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"}; // list of possible digits for the 100ths decimal place
         String tens[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"}; // list of possible digits for the 10ths decimal place
         String ones[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"}; // list of possible digits for the ones decimal place
-		
-		sb.append(printMs(num/1000)); // Check thousands place of integer
-		sb.append(calculateDigit(hundreds[(num % 1000) / 100])); //Check hundreds place of integer and get Roman numeral from list
-		sb.append(calculateDigit(tens[(num % 100) / 10])); // Check tens place of integer and get Roman numeral from list
-		sb.append(calculateDigit(ones[num % 10])); // Check ones place of integer and get Roman numeral from list
-		return sb.toString(); // Concatenate all numerals and return String
-	}
+
+        sb.append(printMs(num/1000)); // Check thousands place of integer
+        sb.append(calculateDigit(hundreds[(num % 1000) / 100])); //Check hundreds place of integer and get Roman numeral from list
+        sb.append(calculateDigit(tens[(num % 100) / 10])); // Check tens place of integer and get Roman numeral from list
+        sb.append(calculateDigit(ones[num % 10])); // Check ones place of integer and get Roman numeral from list
+        return sb.toString(); // Concatenate all numerals and return String
+    }
 	
 	/**
 	 * Converts decimal in standard Arabic numbers to a Roman numeral representation. 
@@ -79,20 +79,19 @@ public class FlexibleDecimalToRoman {
 	 * @param ones letter to represent 1
 	 * @return String of customized Roman numerals
 	 */
-	public static String arabicToRoman(int num, String thousands, String fiveHundreds, String hundreds, String fifties, String tens, String fives, String ones) {
-		if (num <= 0) { // error handling
-			return "Integer must be greater than 0";
-		}
-		thousand = thousands;
-		fiveHun = fiveHundreds;
-		hundred = hundreds;
-		fifty = fifties;
-		ten = tens;
-		five = fives;
-		one = ones;
-		
-		return arabicToRoman(num, false);
-	}
+    public static String arabicToRoman(int num, String thousands, String fiveHundreds, String hundreds, String fifties, String tens, String fives, String ones) {
+        if (num <= 0) { // error handling
+            return "Integer must be greater than 0";
+        }
+        thousand = thousands;
+        fiveHun = fiveHundreds;
+        hundred = hundreds;
+        fifty = fifties;
+        ten = tens;
+        five = fives;
+        one = ones;
+        return arabicToRoman(num, false);
+    }
 	
 	/**
 	 * Converts decimal in standard Arabic numbers to a Roman numeral representation. 
@@ -112,30 +111,29 @@ public class FlexibleDecimalToRoman {
 	 * @param ones letter to represent 1
 	 * @return String of customized Roman numerals
 	 */
-	public static String arabicToRoman(int num, boolean signed, String thousands, String fiveHundreds, String hundreds, String fifties, String tens, String fives, String ones) {
-		thousand = thousands;
-		fiveHun = fiveHundreds;
-		hundred = hundreds;
-		fifty = fifties;
-		ten = tens;
-		five = fives;
-		one = ones;
-		
-		return arabicToRoman(num, signed);
-	}
+    public static String arabicToRoman(int num, boolean signed, String thousands, String fiveHundreds, String hundreds, String fifties, String tens, String fives, String ones) {
+        thousand = thousands;
+        fiveHun = fiveHundreds;
+        hundred = hundreds;
+        fifty = fifties;
+        ten = tens;
+        five = fives;
+        one = ones;
+        return arabicToRoman(num, signed);
+    }
 	
 	/**
 	 * Reset Roman numerals back to original MDCLXVI format
 	 */
-	public static void reset() {
-		thousand = "M";
-		fiveHun = "D";
-		hundred = "C";
-		fifty = "L";
-		ten = "X";
-		five = "V";
-		one = "I";
-	}
+    public static void reset() {
+        thousand = "M";
+        fiveHun = "D";
+        hundred = "C";
+        fifty = "L";
+        ten = "X";
+        five = "V";
+        one = "I";
+    }
 	
 	/**
 	 * Helper method to append to the appropriate number of letters in the 1000ths place.
@@ -143,39 +141,38 @@ public class FlexibleDecimalToRoman {
 	 * @param letters amount of letters to add
 	 * @return StringBuilder with appropriate amount of 1000ths letters
 	 */
-	private static StringBuilder printMs(int letters) {
-		StringBuilder m = new StringBuilder();
-		
-		for (int i = 0; i < letters; i++) {
-			m.append(thousand);
-		}
-		return m;
-	}
+    private static StringBuilder printMs(int letters) {
+        StringBuilder m = new StringBuilder();
+        for (int i = 0; i < letters; i++) {
+            m.append(thousand);
+        }
+        return m;
+    }
 	
 	/**
 	 * Helper function to append whatever set of Roman numerals (customized or standard) the user has elected to use.
 	 * @param digit String presentations of original Roman numerals to convert to local set of numerals
 	 * @return StringBuilder appropriate representation of numerals with current settings
 	 */
-	private static StringBuilder calculateDigit(String digit) {
-		StringBuilder numeral = new StringBuilder();
-		for (int i = 0; i < digit.length(); i++) {
-			if (digit.charAt(i) == 'D') {
-				numeral.append(fiveHun);
-			} else if (digit.charAt(i) == 'C') {
-				numeral.append(hundred);
-			} else if (digit.charAt(i) == 'L') {
-				numeral.append(fifty);
-			} else if (digit.charAt(i) == 'X') {
-				numeral.append(ten);
-			} else if (digit.charAt(i) == 'V') {
-				numeral.append(five);
-			} else if (digit.charAt(i) == 'I') {
-				numeral.append(one);
-			} if (digit.charAt(i) == 'M') {
-				numeral.append(thousand);
-			}
-		}
-		return numeral;
-	}
+    private static StringBuilder calculateDigit(String digit) {
+        StringBuilder numeral = new StringBuilder();
+        for (int i = 0; i < digit.length(); i++) {
+            if (digit.charAt(i) == 'D') {
+                numeral.append(fiveHun);
+            } else if (digit.charAt(i) == 'C') {
+                numeral.append(hundred);
+            } else if (digit.charAt(i) == 'L') {
+                numeral.append(fifty);
+            } else if (digit.charAt(i) == 'X') {
+                numeral.append(ten);
+            } else if (digit.charAt(i) == 'V') {
+                numeral.append(five);
+            } else if (digit.charAt(i) == 'I') {
+                numeral.append(one);
+            } if (digit.charAt(i) == 'M') {
+                numeral.append(thousand);
+            }
+        }
+        return numeral;
+    }
 }
