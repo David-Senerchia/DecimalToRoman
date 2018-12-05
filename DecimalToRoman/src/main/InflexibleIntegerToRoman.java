@@ -1,6 +1,6 @@
 package main;
 /**
- * 
+ * A simple method of converting integers into Roman numerals
  * @author David Senerchia
  *
  */
