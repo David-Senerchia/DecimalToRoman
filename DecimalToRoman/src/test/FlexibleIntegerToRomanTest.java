@@ -13,7 +13,7 @@ import main.FlexibleIntegerToRoman;
 class FlexibleIntegerToRomanTest {
 
 	/**
-	 * Tests all arabicToRoman methods
+	 * Tests  IntergerToRoman method accepting only an unsigned int
 	 */
     @Test
     void testInt() {
@@ -40,6 +40,10 @@ class FlexibleIntegerToRomanTest {
         }
     }
     
+    /**
+     * Tests method that accepts an unsigned int and allows for choosing your own letters
+     *   as Roman numerals.
+     */
     @Test
     void testIntCustomize() {
         try {
@@ -69,6 +73,9 @@ class FlexibleIntegerToRomanTest {
         FlexibleIntegerToRoman.reset();
     }
     
+    /**
+     * Tests method that accepts a signed int 
+     */
     @Test
     void testIntBoolean() {
         // Test added negative sign to standard Roman numerals to include negative number representations
@@ -87,6 +94,10 @@ class FlexibleIntegerToRomanTest {
         assertEquals( "-MMMMCMXCIX", FlexibleIntegerToRoman.arabicToRoman(-4999,true));
     }
     
+    /**
+     * Tests method that accepts a signed int and allows for choosing your own letters
+     *   as Roman numerals.
+     */
     @Test
     void testIntBooleanCustomize() {
         // Test negative signs with user selected letters for Roman numerals
